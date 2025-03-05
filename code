@@ -37,6 +37,10 @@ class Species(Genus):
         super().__init__(genus, family, order, class_, phylum, kingdom, domain)
         self.species = species
 
+def polarBear():
+    
+    PB = Species("Polar Bear", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
 
-pbTest = Species("Polar Bear", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
-print(pbTest.species, pbTest.genus)  
+    print(f"Species: ",PB.species, "\n", "Genus: ", PB.genus,"\n","Family: ",PB.family, "\n", "Order: ",PB.order,"\n", "Class: ",PB.class_,"\n", "Phylum: ",PB.phylum, "\n", "Kingdom: ",PB.kingdom,"\n","Domain: ",PB.domain)  
+
+polarBear()
