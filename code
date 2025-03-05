@@ -39,8 +39,27 @@ class Species(Genus):
 
 def polarBear():
     
-    PB = Species("Polar Bear", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
-
+    print("ENTRY 001 - POLAR BEAR\n")
+    
+    print("INFO:\n The Polar Bear is a large carnivorous mammal found in the Arctic region. Known for its white fur, "
+          "it is adapted to cold environments and is an excellent swimmer. This powerful predator primarily hunts seals, "
+          "using its keen sense of smell to locate prey under the ice. Polar Bears are excellent swimmers, often covering long "
+          "distances in search of food.")
+    PB = Species("Ursus maritimus", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
+    
+    print("\nTAXONOMY:")
     print(f"Species: ",PB.species, "\n", "Genus: ", PB.genus,"\n","Family: ",PB.family, "\n", "Order: ",PB.order,"\n", "Class: ",PB.class_,"\n", "Phylum: ",PB.phylum, "\n", "Kingdom: ",PB.kingdom,"\n","Domain: ",PB.domain)  
+    
+    print("\nIMAGE:")
+    print("insert image here")
 
+
+
+def titleScreen():
+    
+    print("======================")
+    print("|      URSADEX       |")
+    print("======================")
+    
+titleScreen()
 polarBear()
