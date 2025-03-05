@@ -1,0 +1,42 @@
+class Domain:
+    def __init__(self, domain):
+        self.domain = domain
+
+class Kingdom(Domain):
+    def __init__(self, kingdom, domain):
+        super().__init__(domain)
+        self.kingdom = kingdom
+
+class Phylum(Kingdom):
+    def __init__(self, phylum, kingdom, domain):
+        super().__init__(kingdom, domain)
+        self.phylum = phylum
+
+class Class(Phylum):
+    def __init__(self, class_, phylum, kingdom, domain):
+        super().__init__(phylum, kingdom, domain)
+        self.class_ = class_
+
+class Order(Class):
+    def __init__(self, order, class_, phylum, kingdom, domain):
+        super().__init__(class_, phylum, kingdom, domain)
+        self.order = order
+
+class Family(Order):
+    def __init__(self, family, order, class_, phylum, kingdom, domain):
+        super().__init__(order, class_, phylum, kingdom, domain)
+        self.family = family
+
+class Genus(Family):
+    def __init__(self, genus, family, order, class_, phylum, kingdom, domain):
+        super().__init__(family, order, class_, phylum, kingdom, domain)
+        self.genus = genus
+
+class Species(Genus):
+    def __init__(self, species, genus, family, order, class_, phylum, kingdom, domain):
+        super().__init__(genus, family, order, class_, phylum, kingdom, domain)
+        self.species = species
+
+
+pbTest = Species("Polar Bear", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
+print(pbTest.species, pbTest.genus)  
