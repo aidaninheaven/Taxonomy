@@ -1,65 +1,141 @@
 class Domain:
     def __init__(self, domain):
         self.domain = domain
+        self.domaininfo = self.domainDescription()
+
+    def domainDescription(self):
+        domaininfo = {
+            "Eukarya": "Eukarya is a domain that contains organisms with eukaryotic cells, which have a defined nucleus."
+        }
+        return domaininfo.get(self.domain)
 
 class Kingdom(Domain):
     def __init__(self, kingdom, domain):
         super().__init__(domain)
         self.kingdom = kingdom
+        self.kingdominfo = self.kingdomDescription()
+        
+    def kingdomDescription(self):
+        kingdominfo = {
+            "Animalia": "The Animalia kingdom includes multicellular, eukaryotic organisms that eat other organisms, can move, and usually reproduce sexually."
+        }
+        return kingdominfo.get(self.kingdom)
 
 class Phylum(Kingdom):
     def __init__(self, phylum, kingdom, domain):
         super().__init__(kingdom, domain)
         self.phylum = phylum
-
+        self.phyluminfo = self.phylumDescription()
+        
+    def phylumDescription(self):
+        phyluminfo = {
+            "Chordata": "The Chordata phylum consists of animals that have, at some stage of their life, a notochord, a dorsal nerve cord, pharyngeal slits, and a post-anal tail."
+        }
+        return phyluminfo.get(self.phylum)
+        
 class Class(Phylum):
     def __init__(self, class_, phylum, kingdom, domain):
         super().__init__(phylum, kingdom, domain)
         self.class_ = class_
-
+        self.classinfo = self.classDescription()
+        
+    def classDescription(self):
+        classinfo = {
+            "Mammalia": "The Mammalia class includes warm-blooded animals that have hair or fur, give live birth (except for monotremes), and nurse their young with milk."
+        }
+        return classinfo.get(self.class_)
+        
 class Order(Class):
     def __init__(self, order, class_, phylum, kingdom, domain):
         super().__init__(class_, phylum, kingdom, domain)
         self.order = order
+        self.orderinfo = self.orderDescription()
+        
+    def orderDescription(self):
+        orderinfo = {
+            "Carnivora": "The Carnivora order includes animals that primarily eat meat, have sharp teeth and claws for hunting, and include species like cats, dogs, and bears."
+        }
+        return orderinfo.get(self.order)
 
 class Family(Order):
     def __init__(self, family, order, class_, phylum, kingdom, domain):
         super().__init__(order, class_, phylum, kingdom, domain)
         self.family = family
+        self.familyinfo = self.familyDescription()
+        
+    def familyDescription(self):
+        familyinfo = {
+            "Ursidae": "The Ursidae family includes large, mainly omnivorous mammals known as bears, characterized by their robust bodies, thick fur, and plant- and meat-based diets."
+        }
+        return familyinfo.get(self.family)
 
 class Genus(Family):
     def __init__(self, genus, family, order, class_, phylum, kingdom, domain):
         super().__init__(family, order, class_, phylum, kingdom, domain)
         self.genus = genus
+        self.genusinfo = self.genusDescription()
+        
+    def genusDescription(self):
+        genusinfo = {
+            "Ursus": "The Ursus genus includes large bear species."
+        }
+        return genusinfo.get(self.genus)
 
 class Species(Genus):
     def __init__(self, species, genus, family, order, class_, phylum, kingdom, domain):
         super().__init__(genus, family, order, class_, phylum, kingdom, domain)
         self.species = species
+        self.speciesinfo = self.speciesDescription()
+        
+    def speciesDescription(self):
+        speciesinfo = {
+            "Ursus maritimus": "Also known as the polar bear, is a large bear native to the Arctic region, primarily adapted to cold environments, with a diet mainly consisting of seals and a strong reliance on sea ice for hunting.",
+            
+            "Ursus arctos horribilis": "a subspecies of the brown bear, commonly known as the grizzly bear. It is found primarily in North America, particularly in parts of Canada and the United States. Grizzly bears are large, powerful animals, known for their thick fur, strong build, and varied diet, which can include berries, fish, small mammals, and larger prey. They are often associated with wilderness areas and are an important part of the ecosystem."
+        }
+        return speciesinfo.get(self.species)
 
 def polarBear():
-    
     print("ENTRY 001 - POLAR BEAR\n")
     
-    print("INFO:\n The Polar Bear is a large carnivorous mammal found in the Arctic region. Known for its white fur, "
-          "it is adapted to cold environments and is an excellent swimmer. This powerful predator primarily hunts seals, "
-          "using its keen sense of smell to locate prey under the ice. Polar Bears are excellent swimmers, often covering long "
-          "distances in search of food.")
+ 
     PB = Species("Ursus maritimus", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
     
     print("\nTAXONOMY:")
-    print(f"Species: ",PB.species, "\n", "Genus: ", PB.genus,"\n","Family: ",PB.family, "\n", "Order: ",PB.order,"\n", "Class: ",PB.class_,"\n", "Phylum: ",PB.phylum, "\n", "Kingdom: ",PB.kingdom,"\n","Domain: ",PB.domain)  
+    print(f"Domain: {PB.domain} - {PB.domaininfo} \n")
+    print(f"Kingdom: {PB.kingdom} - {PB.kingdominfo} \n")
+    print(f"Phylum: {PB.phylum} - {PB.phyluminfo} \n")
+    print(f"Class: {PB.class_} - {PB.classinfo} \n")
+    print(f"Order: {PB.order} - {PB.orderinfo} \n")
+    print(f"Family: {PB.family} - {PB.familyinfo} \n")
+    print(f"Genus: {PB.genus} - {PB.genusinfo} \n")
+    print(f"Species: {PB.species} - {PB.speciesinfo} \n")
     
     print("\nIMAGE:")
     print("insert image here")
 
-
-
-def titleScreen():
+def grizzlyBear():
+    print("ENTRY 002 - GRIZZLY BEAR\n")
     
+    GB = Species("Ursus arctos horribilis", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
+    
+    print("\nTAXONOMY:")
+    print(f"Domain: {GB.domain} - {GB.domaininfo} \n")
+    print(f"Kingdom: {GB.kingdom} - {GB.kingdominfo} \n")
+    print(f"Phylum: {GB.phylum} - {GB.phyluminfo} \n")
+    print(f"Class: {GB.class_} - {GB.classinfo} \n")
+    print(f"Order: {GB.order} - {GB.orderinfo} \n")
+    print(f"Family: {GB.family} - {GB.familyinfo} \n")
+    print(f"Genus: {GB.genus} - {GB.genusinfo} \n")
+    print(f"Species: {GB.species} - {GB.speciesinfo} \n")
+    
+    print("\nIMAGE:")
+    print("insert image here")
+    
+def titleScreen():
     print("======================")
     print("|      URSADEX       |")
     print("======================")
-    
+
 titleScreen()
-polarBear()
+grizzlyBear()
