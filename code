@@ -4,10 +4,10 @@ class Domain:
         self.domaininfo = self.domainDescription()
 
     def domainDescription(self):
-        domaininfo = {
-            "Eukarya": "Eukarya is a domain that contains organisms with eukaryotic cells, which have a defined nucleus."
-        }
-        return domaininfo.get(self.domain)
+        if self.domain == "Eukarya":
+            return "Eukarya is a domain that contains organisms with eukaryotic cells, which have a defined nucleus."
+        else:
+            return "Unknown domain"
 
 class Kingdom(Domain):
     def __init__(self, kingdom, domain):
@@ -16,10 +16,10 @@ class Kingdom(Domain):
         self.kingdominfo = self.kingdomDescription()
         
     def kingdomDescription(self):
-        kingdominfo = {
-            "Animalia": "The Animalia kingdom includes multicellular, eukaryotic organisms that eat other organisms, can move, and usually reproduce sexually."
-        }
-        return kingdominfo.get(self.kingdom)
+        if self.kingdom == "Animalia":
+            return "The Animalia kingdom includes multicellular, eukaryotic organisms that eat other organisms, can move, and usually reproduce sexually."
+        else:
+            return "Unknown kingdom"
 
 class Phylum(Kingdom):
     def __init__(self, phylum, kingdom, domain):
@@ -28,10 +28,10 @@ class Phylum(Kingdom):
         self.phyluminfo = self.phylumDescription()
         
     def phylumDescription(self):
-        phyluminfo = {
-            "Chordata": "The Chordata phylum consists of animals that have, at some stage of their life, a notochord, a dorsal nerve cord, pharyngeal slits, and a post-anal tail."
-        }
-        return phyluminfo.get(self.phylum)
+        if self.phylum == "Chordata":
+            return "The Chordata phylum consists of animals that have, at some stage of their life, a notochord, a dorsal nerve cord, pharyngeal slits, and a post-anal tail."
+        else:
+            return "Unknown phylum"
         
 class Class(Phylum):
     def __init__(self, class_, phylum, kingdom, domain):
@@ -40,10 +40,10 @@ class Class(Phylum):
         self.classinfo = self.classDescription()
         
     def classDescription(self):
-        classinfo = {
-            "Mammalia": "The Mammalia class includes warm-blooded animals that have hair or fur, give live birth (except for monotremes), and nurse their young with milk."
-        }
-        return classinfo.get(self.class_)
+        if self.class_ == "Mammalia":
+            return "The Mammalia class includes warm-blooded animals that have hair or fur, give live birth (except for monotremes), and nurse their young with milk."
+        else:
+            return "Unknown class"
         
 class Order(Class):
     def __init__(self, order, class_, phylum, kingdom, domain):
@@ -52,10 +52,10 @@ class Order(Class):
         self.orderinfo = self.orderDescription()
         
     def orderDescription(self):
-        orderinfo = {
-            "Carnivora": "The Carnivora order includes animals that primarily eat meat, have sharp teeth and claws for hunting, and include species like cats, dogs, and bears."
-        }
-        return orderinfo.get(self.order)
+        if self.order == "Carnivora":
+            return "The Carnivora order includes animals that primarily eat meat, have sharp teeth and claws for hunting, and include species like cats, dogs, and bears."
+        else:
+            return "Unknown order"
 
 class Family(Order):
     def __init__(self, family, order, class_, phylum, kingdom, domain):
@@ -64,10 +64,10 @@ class Family(Order):
         self.familyinfo = self.familyDescription()
         
     def familyDescription(self):
-        familyinfo = {
-            "Ursidae": "The Ursidae family includes large, mainly omnivorous mammals known as bears, characterized by their robust bodies, thick fur, and plant- and meat-based diets."
-        }
-        return familyinfo.get(self.family)
+        if self.family == "Ursidae":
+            return "The Ursidae family includes large, mainly omnivorous mammals known as bears, characterized by their robust bodies, thick fur, and plant- and meat-based diets."
+        else:
+            return "Unknown family"
 
 class Genus(Family):
     def __init__(self, genus, family, order, class_, phylum, kingdom, domain):
@@ -76,14 +76,14 @@ class Genus(Family):
         self.genusinfo = self.genusDescription()
         
     def genusDescription(self):
-        genusinfo = {
-            "Ursus": "The Ursus genus includes large bear species.",
-            
-            "Tremarctos": "The Tremarctos genus includes the Andean bear, also known as the spectacled bear, which is the only bear species native to South America, characterized by its unique facial markings and primarily herbivorous diet.",
-            
-            "Ailuropoda": "The Ailuropoda genus includes the giant panda (Ailuropoda melanoleuca), a bear species native to China, known for its distinctive black and white fur and primarily bamboo-based diet. Giant pandas are solitary animals and are considered a symbol of wildlife conservation due to their endangered status."
-        }
-        return genusinfo.get(self.genus)
+        if self.genus == "Ursus":
+            return "The Ursus genus includes large bear species."
+        elif self.genus == "Tremarctos":
+            return "The Tremarctos genus includes the Andean bear, also known as the spectacled bear, which is the only bear species native to South America, characterized by its unique facial markings and primarily herbivorous diet."
+        elif self.genus == "Ailuropoda":
+            return "The Ailuropoda genus includes the giant panda (Ailuropoda melanoleuca), a bear species native to China, known for its distinctive black and white fur and primarily bamboo-based diet."
+        else:
+            return "Unknown genus"
 
 class Species(Genus):
     def __init__(self, species, genus, family, order, class_, phylum, kingdom, domain):
@@ -92,24 +92,20 @@ class Species(Genus):
         self.speciesinfo = self.speciesDescription()
         
     def speciesDescription(self):
-        speciesinfo = {
-            "Ursus maritimus": "Also known as the polar bear, is a large bear native to the Arctic region, primarily adapted to cold environments, with a diet mainly consisting of seals and a strong reliance on sea ice for hunting.",
-            
-            "Ursus arctos horribilis": "a subspecies of the brown bear, commonly known as the grizzly bear. It is found primarily in North America, particularly in parts of Canada and the United States. Grizzly bears are large, powerful animals, known for their thick fur, strong build, and varied diet, which can include berries, fish, small mammals, and larger prey. They are often associated with wilderness areas and are an important part of the ecosystem.",
-            
-            "Tremarctos ornatus": "Tremarctos ornatus, commonly known as the spectacled bear, is the only bear species native to South America. It is named for the distinctive white or light-colored fur around its eyes, which gives it the appearance of wearing spectacles. Spectacled bears are primarily herbivorous, feeding on plants, fruits, and occasionally small animals, and are typically found in the Andes Mountains.",
-            
-            "Ailuropoda melanoleuca": "Ailuropoda melanoleuca, commonly known as the giant panda, is a bear species native to China. It is easily recognized by its black and white fur and is primarily herbivorous, with bamboo making up the majority of its diet. Although it belongs to the order Carnivora, the giant panda's diet and behavior are mostly plant-based. Giant pandas are considered a symbol of conservation efforts, as they have been endangered for many years but are slowly recovering due to protection and breeding programs."
-            
-            
-            
-        }
-        return speciesinfo.get(self.species)
+        if self.species == "Ursus maritimus":
+            return "Also known as the polar bear, is a large bear native to the Arctic region, primarily adapted to cold environments, with a diet mainly consisting of seals and a strong reliance on sea ice for hunting."
+        elif self.species == "Ursus arctos horribilis":
+            return "A subspecies of the brown bear, commonly known as the grizzly bear. It is found primarily in North America, particularly in parts of Canada and the United States."
+        elif self.species == "Tremarctos ornatus":
+            return "The spectacled bear is the only bear species native to South America. It is named for the distinctive white or light-colored fur around its eyes, which gives it the appearance of wearing spectacles."
+        elif self.species == "Ailuropoda melanoleuca":
+            return "The giant panda is a bear species native to China, easily recognized by its black and white fur, and primarily herbivorous, with bamboo making up the majority of its diet."
+        else:
+            return "Unknown species"
 
 def polarBear():
     print("ENTRY 001 - POLAR BEAR\n")
     
- 
     PB = Species("Ursus maritimus", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
     
     print("\nTAXONOMY:")
