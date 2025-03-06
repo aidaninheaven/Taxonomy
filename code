@@ -77,11 +77,15 @@ class Genus(Family):
         
     def genusDescription(self):
         if self.genus == "Ursus":
-            return "The Ursus genus includes large bear species."
+            return "The Ursus genus includes large bear species like the brown bear and polar bear. These bears are omnivorous, powerful, and often solitary, found in diverse habitats ranging from forests to Arctic regions."
         elif self.genus == "Tremarctos":
             return "The Tremarctos genus includes the Andean bear, also known as the spectacled bear, which is the only bear species native to South America, characterized by its unique facial markings and primarily herbivorous diet."
         elif self.genus == "Ailuropoda":
             return "The Ailuropoda genus includes the giant panda (Ailuropoda melanoleuca), a bear species native to China, known for its distinctive black and white fur and primarily bamboo-based diet."
+        elif self.genus == "Helarctos":
+            return "The Helarctos genus consists of the Malayan sun bear, the smallest bear species. They are found in Southeast Asia and are known for their short black fur and chest markings. Sun bears are omnivores and great climbers."
+        elif self.genus == "Melursus":
+            return "The Melursus genus is a unique group of bears, with only one species, the sloth bear (Melursus ursinus). This genus is distinguished by its specialized adaptations for an insectivorous diet, primarily feeding on termites and ants. Sloth bears have long, shaggy fur, and their lower jaw is inward-curved, allowing them to effectively suck up their food. They also possess large, curved claws to help them dig for food. The genus is found mainly in the forests of the Indian subcontinent and is known for its nocturnal behavior."
         else:
             return "Unknown genus"
 
@@ -100,6 +104,22 @@ class Species(Genus):
             return "The spectacled bear is the only bear species native to South America. It is named for the distinctive white or light-colored fur around its eyes, which gives it the appearance of wearing spectacles."
         elif self.species == "Ailuropoda melanoleuca":
             return "The giant panda is a bear species native to China, easily recognized by its black and white fur, and primarily herbivorous, with bamboo making up the majority of its diet."
+        elif self.species == "Ursus thibetanus":
+            return "A medium-sized bear found across the forests of Asia, ranging from the Himalayas to parts of Southeast Asia. It is known for the distinctive white crescent-shaped mark on its chest, which gives it the nickname moon bear. Asiatic black bears are omnivorous, feeding on a variety of fruits, insects, and small mammals. They are typically arboreal, spending a lot of time in trees, and are mostly solitary creatures."
+        elif self.species == "Helarctos malayanus":
+            return "Also known as the Malayan sun bear, is the smallest bear species, found in the tropical forests of Southeast Asia. It has short, dark fur with a distinctive yellow or orange crescent on its chest. Sun bears are omnivorous, feeding on fruits, honey, and small animals. They are solitary, nocturnal, and excellent climbers. Due to habitat loss and poaching, they are listed as Vulnerable."
+        elif self.species == "Ursus arctos middendorffi":
+            return "Also known as the Kodiak bear, is a subspecies of the brown bear found on the Kodiak Archipelago in Alaska. They are one of the largest bear species, with males weighing up to 1,500 pounds. Kodiak bears are omnivorous, feeding on a diet that includes salmon, berries, and plants. They are known for their large size and powerful build."
+        elif self.species == "Ursus arctos isabellinus":
+            return "Commonly known as the Himalayan brown bear, is a subspecies of the brown bear found in the mountain ranges of the Himalayas. These bears are typically smaller than other brown bear subspecies and have a lighter, often reddish-brown coat. Himalayan brown bears are omnivorous, feeding on a variety of plants, fruits, and small animals. They are mainly found in remote, high-altitude regions."
+        elif self.species == "Melursus ursinus":
+            return "Commonly known as the sloth bear, is a bear species found in the Indian subcontinent. They are characterized by their long, shaggy black fur, white or yellowish markings on their chest, and a unique, inward-curved lower jaw. Sloth bears are nocturnal and primarily insectivorous, feeding mainly on termites and ants. They have specialized long claws to help them dig for food and are typically found in forested areas."
+        elif self.species == "Ursus arctos beringianus":
+            return "Commonly known as the Khamtacha brown bear, is a subspecies of the brown bear found primarily in the Beringia region, which includes parts of eastern Russia and Alaska. This bear is similar in appearance to other brown bears, with a large, muscular body and thick fur, but it is adapted to the harsh cold climates of the area. It primarily feeds on a diet of fish, berries, and small mammals and is known to be an excellent swimmer, capable of navigating coastal areas and rivers in search of food. The Beringian brown bear is closely related to other brown bear subspecies but is distinguished by its specific habitat and dietary habits."
+        elif self.species == "Ursus arctos": 
+            return "Commonly known as the brown bear, is one of the largest and most widespread species of bear, found across North America, Europe, and Asia. These bears are known for their large size, with males often weighing between 300 to 1,500 pounds depending on the subspecies. Brown bears have a varied diet that includes berries, plants, fish, small mammals, and carrion, with some subspecies also known to hunt larger mammals."
+        elif self.species == "Ursus arctos arctos":
+            return "Also known as the Eurasian brown bear, is a subspecies of the brown bear found throughout much of Europe and parts of Asia, particularly in the forests and mountains of Russia, the Balkans, and Scandinavia. This subspecies is generally large, with males weighing between 400 to 1,000 pounds, depending on the region and food availability. Eurasian brown bears are omnivorous, with a diet consisting of berries, nuts, roots, small mammals, and larger prey such as deer or wild boar. They are also known to fish in rivers, particularly in regions with salmon runs."
         else:
             return "Unknown species"
 
@@ -172,10 +192,131 @@ def giantPanda():
     print(f"Genus: {GP.genus} - {GP.genusinfo} \n")
     print(f"Species: {GP.species} - {GP.speciesinfo} \n")
     
+    
+def asianblackBear():
+    
+    print("ENTRY 005 - ASIAN BLACK BEAR")
+    
+    ABB = Species("Ursus thibetanus", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
+    
+    print("\nTAXONOMY:")
+    print(f"Domain: {ABB.domain} - {ABB.domaininfo} \n")
+    print(f"Kingdom: {ABB.kingdom} - {ABB.kingdominfo} \n")
+    print(f"Phylum: {ABB.phylum} - {ABB.phyluminfo} \n")
+    print(f"Class: {ABB.class_} - {ABB.classinfo} \n")
+    print(f"Order: {ABB.order} - {ABB.orderinfo} \n")
+    print(f"Family: {ABB.family} - {ABB.familyinfo} \n")
+    print(f"Genus: {ABB.genus} - {ABB.genusinfo} \n")
+    print(f"Species: {ABB.species} - {ABB.speciesinfo} \n")
+    
+def sunBear():
+    print("ENTRY 006 - SUN BEAR")
+    
+    sB = Species("Helarctos malayanus", "Helarctos", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
+    
+    print("\nTAXONOMY:")
+    print(f"Domain: {sB.domain} - {sB.domaininfo} \n")
+    print(f"Kingdom: {sB.kingdom} - {sB.kingdominfo} \n")
+    print(f"Phylum: {sB.phylum} - {sB.phyluminfo} \n")
+    print(f"Class: {sB.class_} - {sB.classinfo} \n")
+    print(f"Order: {sB.order} - {sB.orderinfo} \n")
+    print(f"Family: {sB.family} - {sB.familyinfo} \n")
+    print(f"Genus: {sB.genus} - {sB.genusinfo} \n")
+    print(f"Species: {sB.species} - {sB.speciesinfo} \n") 
+    
+def kodiakBear():
+    print("ENTRY 007 - KODIAK BEAR")
+    
+    KB = Species("Ursus arctos middendorffi", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
+    
+    print("\nTAXONOMY:")
+    print(f"Domain: {KB.domain} - {KB.domaininfo} \n")
+    print(f"Kingdom: {KB.kingdom} - {KB.kingdominfo} \n")
+    print(f"Phylum: {KB.phylum} - {KB.phyluminfo} \n")
+    print(f"Class: {KB.class_} - {KB.classinfo} \n")
+    print(f"Order: {KB.order} - {KB.orderinfo} \n")
+    print(f"Family: {KB.family} - {KB.familyinfo} \n")
+    print(f"Genus: {KB.genus} - {KB.genusinfo} \n")
+    print(f"Species: {KB.species} - {KB.speciesinfo} \n")
+    
+def himalayanBrownBear():
+    print("ENTRY 008 - HIMALAYAN BROWN BEAR")
+    
+    HBB = Species("Ursus arctos isabellinus", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
+    
+    print("\nTAXONOMY:")
+    print(f"Domain: {HBB.domain} - {HBB.domaininfo} \n")
+    print(f"Kingdom: {HBB.kingdom} - {HBB.kingdominfo} \n")
+    print(f"Phylum: {HBB.phylum} - {HBB.phyluminfo} \n")
+    print(f"Class: {HBB.class_} - {HBB.classinfo} \n")
+    print(f"Order: {HBB.order} - {HBB.orderinfo} \n")
+    print(f"Family: {HBB.family} - {HBB.familyinfo} \n")
+    print(f"Genus: {HBB.genus} - {HBB.genusinfo} \n")
+    print(f"Species: {HBB.species} - {HBB.speciesinfo} \n")
+    
+def slothBear():
+    print("ENTRY 009 - SLOTH BEAR")
+    
+    SSB = Species("Melursus ursinus", "Melursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
+    
+    print("\nTAXONOMY:")
+    print(f"Domain: {SSB.domain} - {SSB.domaininfo} \n")
+    print(f"Kingdom: {SSB.kingdom} - {SSB.kingdominfo} \n")
+    print(f"Phylum: {SSB.phylum} - {SSB.phyluminfo} \n")
+    print(f"Class: {SSB.class_} - {SSB.classinfo} \n")
+    print(f"Order: {SSB.order} - {SSB.orderinfo} \n")
+    print(f"Family: {SSB.family} - {SSB.familyinfo} \n")
+    print(f"Genus: {SSB.genus} - {SSB.genusinfo} \n")
+    print(f"Species: {SSB.species} - {SSB.speciesinfo} \n")
+    
+def khamtachaBrownBear():
+    print("ENTRY 010 - KHAMTACHA BROWN BEAR")
+    
+    KBB = Species("Ursus arctos beringianus", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
+    
+    print("\nTAXONOMY:")
+    print(f"Domain: {KBB.domain} - {KBB.domaininfo} \n")
+    print(f"Kingdom: {KBB.kingdom} - {KBB.kingdominfo} \n")
+    print(f"Phylum: {KBB.phylum} - {KBB.phyluminfo} \n")
+    print(f"Class: {KBB.class_} - {KBB.classinfo} \n")
+    print(f"Order: {KBB.order} - {KBB.orderinfo} \n")
+    print(f"Family: {KBB.family} - {KBB.familyinfo} \n")
+    print(f"Genus: {KBB.genus} - {KBB.genusinfo} \n")
+    print(f"Species: {KBB.species} - {KBB.speciesinfo} \n")
+
+def americanBrownBear():
+    print("ENTRY 011 - AMERICAN BROWN BEAR")
+    
+    ABB = Species("Ursus arctos", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
+    
+    print("\nTAXONOMY:")
+    print(f"Domain: {ABB.domain} - {ABB.domaininfo} \n")
+    print(f"Kingdom: {ABB.kingdom} - {ABB.kingdominfo} \n")
+    print(f"Phylum: {ABB.phylum} - {ABB.phyluminfo} \n")
+    print(f"Class: {ABB.class_} - {ABB.classinfo} \n")
+    print(f"Order: {ABB.order} - {ABB.orderinfo} \n")
+    print(f"Family: {ABB.family} - {ABB.familyinfo} \n")
+    print(f"Genus: {ABB.genus} - {ABB.genusinfo} \n")
+    print(f"Species: {ABB.species} - {ABB.speciesinfo} \n")
+
+def eurasianBrownBear():
+    print("ENTRY 012 - EURASIAN BROWN BEAR")
+    
+    EBB = Species("Ursus arctos arctos", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
+    
+    print("\nTAXONOMY:")
+    print(f"Domain: {EBB.domain} - {EBB.domaininfo} \n")
+    print(f"Kingdom: {EBB.kingdom} - {EBB.kingdominfo} \n")
+    print(f"Phylum: {EBB.phylum} - {EBB.phyluminfo} \n")
+    print(f"Class: {EBB.class_} - {EBB.classinfo} \n")
+    print(f"Order: {EBB.order} - {EBB.orderinfo} \n")
+    print(f"Family: {EBB.family} - {EBB.familyinfo} \n")
+    print(f"Genus: {EBB.genus} - {EBB.genusinfo} \n")
+    print(f"Species: {EBB.species} - {EBB.speciesinfo} \n")
+    
 def titleScreen():
     print("======================")
     print("|      URSADEX       |")
     print("======================")
 
 titleScreen()
-giantPanda()
