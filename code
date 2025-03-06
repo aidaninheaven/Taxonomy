@@ -77,7 +77,11 @@ class Genus(Family):
         
     def genusDescription(self):
         genusinfo = {
-            "Ursus": "The Ursus genus includes large bear species."
+            "Ursus": "The Ursus genus includes large bear species.",
+            
+            "Tremarctos": "The Tremarctos genus includes the Andean bear, also known as the spectacled bear, which is the only bear species native to South America, characterized by its unique facial markings and primarily herbivorous diet.",
+            
+            "Ailuropoda": "The Ailuropoda genus includes the giant panda (Ailuropoda melanoleuca), a bear species native to China, known for its distinctive black and white fur and primarily bamboo-based diet. Giant pandas are solitary animals and are considered a symbol of wildlife conservation due to their endangered status."
         }
         return genusinfo.get(self.genus)
 
@@ -91,7 +95,14 @@ class Species(Genus):
         speciesinfo = {
             "Ursus maritimus": "Also known as the polar bear, is a large bear native to the Arctic region, primarily adapted to cold environments, with a diet mainly consisting of seals and a strong reliance on sea ice for hunting.",
             
-            "Ursus arctos horribilis": "a subspecies of the brown bear, commonly known as the grizzly bear. It is found primarily in North America, particularly in parts of Canada and the United States. Grizzly bears are large, powerful animals, known for their thick fur, strong build, and varied diet, which can include berries, fish, small mammals, and larger prey. They are often associated with wilderness areas and are an important part of the ecosystem."
+            "Ursus arctos horribilis": "a subspecies of the brown bear, commonly known as the grizzly bear. It is found primarily in North America, particularly in parts of Canada and the United States. Grizzly bears are large, powerful animals, known for their thick fur, strong build, and varied diet, which can include berries, fish, small mammals, and larger prey. They are often associated with wilderness areas and are an important part of the ecosystem.",
+            
+            "Tremarctos ornatus": "Tremarctos ornatus, commonly known as the spectacled bear, is the only bear species native to South America. It is named for the distinctive white or light-colored fur around its eyes, which gives it the appearance of wearing spectacles. Spectacled bears are primarily herbivorous, feeding on plants, fruits, and occasionally small animals, and are typically found in the Andes Mountains.",
+            
+            "Ailuropoda melanoleuca": "Ailuropoda melanoleuca, commonly known as the giant panda, is a bear species native to China. It is easily recognized by its black and white fur and is primarily herbivorous, with bamboo making up the majority of its diet. Although it belongs to the order Carnivora, the giant panda's diet and behavior are mostly plant-based. Giant pandas are considered a symbol of conservation efforts, as they have been endangered for many years but are slowly recovering due to protection and breeding programs."
+            
+            
+            
         }
         return speciesinfo.get(self.species)
 
@@ -132,10 +143,43 @@ def grizzlyBear():
     print("\nIMAGE:")
     print("insert image here")
     
+def spectacledBear():
+    
+    print("ENTRY 003 - SPECTACLED BEAR\n")
+  
+    SB = Species("Tremarctos ornatus", "Tremarctos", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
+  
+    print("\nTAXONOMY:")
+    print(f"Domain: {SB.domain} - {SB.domaininfo} \n")
+    print(f"Kingdom: {SB.kingdom} - {SB.kingdominfo} \n")
+    print(f"Phylum: {SB.phylum} - {SB.phyluminfo} \n")
+    print(f"Class: {SB.class_} - {SB.classinfo} \n")
+    print(f"Order: {SB.order} - {SB.orderinfo} \n")
+    print(f"Family: {SB.family} - {SB.familyinfo} \n")
+    print(f"Genus: {SB.genus} - {SB.genusinfo} \n")
+    print(f"Species: {SB.species} - {SB.speciesinfo} \n")
+  
+  
+def giantPanda():
+    
+    print("ENTRY 004 - GIANT PANDA")
+    
+    GP = Species("Ailuropoda melanoleuca", "Ailuropoda", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
+    
+    print("\nTAXONOMY:")
+    print(f"Domain: {GP.domain} - {GP.domaininfo} \n")
+    print(f"Kingdom: {GP.kingdom} - {GP.kingdominfo} \n")
+    print(f"Phylum: {GP.phylum} - {GP.phyluminfo} \n")
+    print(f"Class: {GP.class_} - {GP.classinfo} \n")
+    print(f"Order: {GP.order} - {GP.orderinfo} \n")
+    print(f"Family: {GP.family} - {GP.familyinfo} \n")
+    print(f"Genus: {GP.genus} - {GP.genusinfo} \n")
+    print(f"Species: {GP.species} - {GP.speciesinfo} \n")
+    
 def titleScreen():
     print("======================")
     print("|      URSADEX       |")
     print("======================")
 
 titleScreen()
-grizzlyBear()
+giantPanda()
