@@ -319,4 +319,23 @@ def titleScreen():
     print("|      URSADEX       |")
     print("======================")
 
+    print("Welcome to the URSAdex, pick a bear to get started.")
+    print("1. Polar Bear")
+    print("2. Grizzly Bear")
+    print("3. Spectacled Bear")
+    print("4. Giant Panda")
+    print("5. Asian Black Bear")
+    print("6. Sun Bear")
+    print("7. Kodiak Bear")
+    print("8. Himalayan Brown Bear")
+    print("9. Sloth Bear")
+    print("10. Khamtacha Brown Bear")
+    print("11. American Brown Bear")
+    print("12. Eurasian Brown Bear")
+
+    choice = input("Pick a bear you would like to learn about today: ")
+
+    if not choice.isdigit():
+        print("Choice must be a number.")
+
 titleScreen()
