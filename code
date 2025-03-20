@@ -1,5 +1,6 @@
 import os
 
+#starting class, domain, it goes down the taxonomy chart, inheriting the traits of the previous classes
 class Domain:
     def __init__(self, domain):
         self.domain = domain
@@ -76,7 +77,7 @@ class Genus(Family):
         super().__init__(family, order, class_, phylum, kingdom, domain)
         self.genus = genus
         self.genusinfo = self.genusDescription()
-        
+        #depending on the genus, different discriptions are applied.
     def genusDescription(self):
         if self.genus == "Ursus":
             return "The Ursus genus includes large bear species like the brown bear and polar bear. These bears are omnivorous, powerful, and often solitary, found in diverse habitats ranging from forests to Arctic regions."
@@ -96,7 +97,7 @@ class Species(Genus):
         super().__init__(genus, family, order, class_, phylum, kingdom, domain)
         self.species = species
         self.speciesinfo = self.speciesDescription()
-        
+        #depending on the species, different discriptions are applied.
     def speciesDescription(self):
         if self.species == "Ursus maritimus":
             return "Also known as the polar bear, is a large bear native to the Arctic region, primarily adapted to cold environments, with a diet mainly consisting of seals and a strong reliance on sea ice for hunting."
@@ -127,9 +128,9 @@ class Species(Genus):
 
 def polarBear():
     print("ENTRY 001 - POLAR BEAR\n")
-    
+    #creating an object with the class inheritance system
     PB = Species("Ursus maritimus", "Ursus", "Ursidae", "Carnivora", "Mammalia", "Chordata", "Animalia", "Eukarya")
-    
+    #printing an ascii image
     print("\nIMAGE:")
     print("""
                                                                                                                                        
@@ -178,7 +179,7 @@ def polarBear():
 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒░░░                                             
 ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒▒▒▒▒▒▒▒░                                                
           """)
-
+#printing the bear's taxonomy info, and their respective description
     print("\nTAXONOMY:")
     print(f"Domain: {PB.domain} - {PB.domaininfo} \n")
     print(f"Kingdom: {PB.kingdom} - {PB.kingdominfo} \n")
@@ -1072,10 +1073,10 @@ def eurasianBrownBear():
 
 
     
-def clearScreen():
+def clearScreen(): #function for clearing the terminal when needed
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def titleScreen():
+def titleScreen(): #simple title screen
     print("\n===== BEAR TAXONOMY DATABASE =====")
     print("1. Polar Bear")
     print("2. Grizzly Bear")
@@ -1091,7 +1092,7 @@ def titleScreen():
     print("12. Eurasian Brown Bear")
     print("13. Exit")
 
-def userInput():
+def userInput(): #handles user input
     while True:
         clearScreen()  
         titleScreen()
